@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent-div">
+        <div class="tabs-pills">
+            <ul class="nav nav-tabs">
+                <li><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#menu3">Todo List</a></li>
+                <li class="contact"><a data-toggle="tab" href="#menu2">Contact</a></li>
+
+                <img class="img-avatar" src="me.jpg" alt="my-avatar" />
+            </ul>
+        </div>
+
+
+        <div class="tab-content container">
+            <div id="home" class="tab-pane fade in active">
+                <h3 class="center-text">HOME</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua.</p>
+            </div>
+
+            <div id="menu3" class="tab-pane fade">
+                <h3 class="center-text">Todo List</h3>
+                <div class="container">
+                    <p>
+                        <label for="new-task">Add Item</label><input id="new-task" type="text"><button class="btn btn-default">Add</button>
+                    </p>
+
+                    <h3>Todo</h3>
+                    <ul id="incomplete-tasks"></ul>
+
+                    <h3>Completed</h3>
+                    <ul id="completed-tasks"></ul>
+                </div>
+
+                <script type="text/javascript" src="index.js"></script>
+
+                <script>
+                    if ('serviceWorker' in navigator) {
+                        window.addEventListener('load', function () {
+                            navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                                // Registration was successful
+                                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                            }, function (err) {
+                                // registration failed :(
+                                console.log('ServiceWorker registration failed: ', err);
+                            });
+                        });
+                    }
+                </script>
+
+            </div>
+
+
+            <div id="menu2" class="tab-pane fade">
+                <h3 class="center-text"> <i class="fa fa-user" aria-hidden="true"></i> Contact</h3>
+                <div class="contact-info">
+                    <p>
+                        <a href="https://web.facebook.com/mohammedhamza.ahmed.9"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook </a>
+                    </p>
+                </div>
+                <div class="contact-info">
+                    <p>
+                        <a href="https://github.com/hamza011"><i class="fa fa-github-square" aria-hidden="true"></i> Github </a>
+                    </p>
+                </div>
+                <div class="contact-info">
+                    <p>
+                        <i class="fa fa-envelope" aria-hidden="true"></i> Email me at <a href="#">h.hamza011@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+</body>
+
+</html>
